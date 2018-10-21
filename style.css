@@ -1,0 +1,25 @@
+header{
+    background: black;
+}
+.heading{
+    text-align: center;    
+}
+
+.todo-form{
+    width: 50%;
+    margin: 0 auto;
+}
+.list{
+    margin: 0 auto;
+    font-size: 1em
+
+}
+.done{
+    text-decoration: line-through;
+}
+.error{
+    color: red;
+}
+.btnRemove{
+    size: 1em
+}

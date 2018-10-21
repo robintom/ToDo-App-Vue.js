@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Todo-App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id='app'>
+        <h3 class="heading">{{title}}</h3>
+        <form class="todo-form" @submit.prevent="addToDo">
+                <label for="name">Name</label>
+                <input v-model="toDoName" class="u-full-width" type="text" name="name" id="name">
+                <label for="content">Vue To-Do</label>
+                <input v-model="newToDo" class="u-full-width" type="text" name="newToDo" id="newToDo">
+                <li class="error" v-for="err in errEmpty">{{err.err}}</li>
+                <button class="button-primary" type="submit">Save ToDo</button>
+            </form>
+        <ul class="list">
+            
+            <li v-for="todo in ToDos">
+                
+                <input type="checkbox" v-model="todo.done">
+                <span :class="{ done: todo.done}">{{todo.name}} : {{todo.title}}</span>
+                <button class="btnRemove" type="button">Remove</button>
+            </li>
+        </ul>   
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
